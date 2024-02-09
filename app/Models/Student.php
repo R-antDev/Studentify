@@ -22,6 +22,10 @@ class Student extends Model
     public function user(){
         return $this->belongsTo(User::class,'created_by');
     }
+    public function education()
+    {
+        return $this->hasMany(StudentEducation::class);
+    }
 
 
 }

@@ -2,9 +2,9 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-11">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Create student') }}</div>
+                    <div class="card-header text-center">{{ __('Students list') }}</div>
 
                     <div class="card-body">
 
@@ -23,6 +23,7 @@
                                     <th>District</th>
                                     <th>Created By</th>
                                     <th>Updated By</th>
+                                    <th>Education</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -39,6 +40,9 @@
                                         <td>{{$student->district}}</td>
                                         <td>{{$student->user->name}}</td>
                                         <td>{{$student->updated_by}}</td>
+                                        <td>
+                                            <a href="{{route('student.education', $student->id)}}" class="btn btn-info me-1">View Education</a>
+                                        </td>
                                         <td>
                                             <a href="{{route('student.edit', $student->id)}}" class="btn btn-primary me-1">Edit</a>
                                         </td>

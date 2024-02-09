@@ -23,7 +23,7 @@ class StudentController extends Controller
             'district' => $request->district,
             'created_by' => Auth::user()->id
         ]);
-        return redirect()->route('create.student');
+        return redirect()->route('create.student')->with('success','Student created successfully');
     }
     public function student_list()
     {
@@ -47,7 +47,7 @@ class StudentController extends Controller
         $data->district = $request->district;
         $data->updated_by = Auth::user()->id;
         $data->save();
-        return redirect()->route('student.edit',$id);
+        return redirect()->route('student.edit',$id)->with('success','Student updated successfully');
     }
     // Delete method
     public function student_delete($id)
@@ -56,4 +56,11 @@ class StudentController extends Controller
         $data->delete();
         return redirect()->route('student.list');
     }
+
+    // add education
+//    public function student_education($id)
+//    {
+//        $student = Student::find($id);
+//        return view('student.student_education',compact('student'));
+//    }
 }

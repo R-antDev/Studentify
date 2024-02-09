@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentEducationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,12 @@ Route::get('/student-list',[StudentController::class,'student_list'])->name('stu
 Route::get('/student/{id}', [StudentController::class, 'student_edit'])->name('student.edit');
 Route::put('/student/{id}', [StudentController::class, 'student_update'])->name('student.update');
 Route::delete('/student/{id}', [StudentController::class, 'student_delete'])->name('student.delete');
+
+Route::get('/educations/student/{id}', [StudentEducationController::class, 'education_list'])->name('student.education');
+// Create
+Route::post('/educations/student/{studentId}', [StudentEducationController::class, 'add_education'])->name('education.add');
+// Edit
+Route::get('/educations/{id}/edit', [StudentEducationController::class, 'education_edit'])->name('education.edit');
+Route::put('/educations/{id}', [StudentEducationController::class, 'education_update'])->name('education.update');
+// delete
+Route::delete('/educations/{id}', [StudentEducationController::class, 'education_delete'])->name('education.delete');
