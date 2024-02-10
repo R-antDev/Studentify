@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center">{{ __('Update Information') }}</div>
+                    <div class="card-header bg-info fw-bold text-center">{{ __('Update Education Information') }}</div>
                     <div class="card-body">
                         <p class="fw-bold">Student ID: {{$edu->student_id}}</p>
                         <p class="fw-bold">Name: {{$edu->student ? $edu->student->name : 'No Student'}}</p>

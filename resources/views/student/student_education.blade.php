@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header text-center">{{ __('Add Education') }}</div>
+                            <div class="card-header bg-success fw-bold text-white text-center">{{ __('Add Education') }}</div>
                             <div class="card-body">
                                 <p class="fw-bold">Student ID: {{$student->id}}</p>
                                 <p class="fw-bold">Name: {{$student->name}}</p>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header text-center">{{ __('Educations') }}</div>
+                            <div class="card-header fw-bold text-white bg-dark text-center">{{ __('Educations') }}</div>
                             <div class="card-body">
                                 <table class="table">
                                     <thead>
