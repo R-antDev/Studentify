@@ -77,7 +77,13 @@
                 </div>
             </div>
         </nav>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show text-right col-3 rounded-pill mx-auto mt-2" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 
+        @endif
         <main class="py-4">
             @yield('content')
         </main>
