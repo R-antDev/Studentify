@@ -24,8 +24,10 @@
                                     <th>Created By</th>
                                     <th>Updated By</th>
                                     <th>Education</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    @auth()
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    @endauth
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,18 +43,23 @@
                                         <td>{{$student->user->name}}</td>
                                         <td>{{$student->updated_by}}</td>
                                         <td>
-                                            <a href="{{route('student.education', $student->id)}}" class="btn btn-info me-1">View Education</a>
+                                            <a href="{{route('student.education', $student->id)}}"
+                                               class="btn btn-info me-1">View Education</a>
                                         </td>
-                                        <td>
-                                            <a href="{{route('student.edit', $student->id)}}" class="btn btn-primary me-1">Edit</a>
-                                        </td>
-                                        <td>
-                                            <form action="{{route('student.delete', $student->id)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
+                                        @auth()
+                                            <td>
+                                                <a href="{{route('student.edit', $student->id)}}"
+                                                   class="btn btn-primary me-1">Edit</a>
+                                            </td>
+                                            <td>
+                                                <form action="{{route('student.delete', $student->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        @endauth
+
                                     </tr>
                                 @endforeach
                                 </tbody>

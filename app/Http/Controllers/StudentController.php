@@ -54,7 +54,7 @@ class StudentController extends Controller
     {
         $data = Student::find($id);
         $data->delete();
-        return redirect()->route('student.list')->with('success', 'Student Deleted successfully');
+        return redirect()->route('student.list')->with('success', 'Student deleted successfully');
     }
 
     // add education
